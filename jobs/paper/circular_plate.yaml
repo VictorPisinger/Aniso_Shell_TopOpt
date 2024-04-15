@@ -1,0 +1,81 @@
+shell-opt:
+    job_type: "shape_and_thk"
+    output_file: "circular_shell.e"
+    default_thickness: 0.0005
+    max_its: 500
+    thk_min: 0.0001
+    thk_max: 0.0011 
+    thk_move_limit: 0.01
+    filter_radius: 2.0
+    volume_fraction: 1.0
+    allowed_volume: 0.0002
+    move_min: -10.0
+    move_max: 10.0
+    move_move_limit: 0.01
+    aspect_ratio_constraint: 1.1
+    input_files: "../testMeshes/circular_plate_05_*.ply"
+    domain:
+      boundary_conditions:
+        - type: "outside_circle"
+          center: [0,0,0]
+          radius: 0.4999
+          dofs: [2]
+        - type: "outside_circle_zero_rotation"
+          center: [0,0,0]
+          radius: 0.4999
+          dofs: [2]
+        - type: "box"
+          x_min: -1
+          x_max: 0.001
+          y_min: -1
+          y_max: 2
+          z_min: -1
+          z_max: 2
+          dofs: [0]
+        - type: "box"
+          x_min: -1
+          x_max: 2
+          y_min: -1
+          y_max: 0.001
+          z_min: -1
+          z_max: 2
+          dofs: [1]
+        - type: "box_zero_rotation"
+          x_min: -1
+          x_max: 0.001
+          y_min: -1
+          y_max: 2
+          z_min: -1
+          z_max: 2
+        - type: "box_zero_rotation"
+          x_min: -1
+          x_max: 2
+          y_min: -1
+          y_max: 0.001
+          z_min: -1
+          z_max: 2
+      forces:
+        - type: "manifold_pressure"
+          manifold_index: 0
+          pressure: 1.0
+      non_design_nodes:
+        - type: "outside_circle"
+          center: [0,0,0]
+          radius: 0.4999
+          dofs: [2]
+        - type: "box"
+          x_min: -1
+          x_max: 0.001
+          y_min: -1
+          y_max: 2
+          z_min: -1
+          z_max: 2
+          dofs: [0]
+        - type: "box"
+          x_min: -1
+          x_max: 2
+          y_min: -1
+          y_max: 0.001
+          z_min: -1
+          z_max: 2
+          dofs: [1]

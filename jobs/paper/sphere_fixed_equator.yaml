@@ -1,0 +1,92 @@
+shell-opt:
+    job_type: "shape_and_thk"
+    output_file: "sphere_fixed_equator.e"
+    default_thickness: 0.001
+    max_its: 150
+    thk_min: 0.0001
+    thk_max: 0.0011 
+    thk_move_limit: 0.01
+    filter_radius: 2.0
+    move_min: -10.0
+    move_max: 10.0
+    allowed_volume: 0.0002
+    volume_fraction: 1.0
+    move_move_limit: 0.01
+    aspect_ratio_constraint: 1.1
+    input_files: "../testMeshes/sphere_05_*.ply"
+    domain:
+      boundary_conditions:
+        - type: "box"
+          x_min: -1
+          x_max: 0.001
+          y_min: -1
+          y_max: 2
+          z_min: -1
+          z_max: 2
+          dofs: [0]
+        - type: "box"
+          x_min: -1
+          x_max: 2
+          y_min: -1
+          y_max: 0.001
+          z_min: -1
+          z_max: 2
+          dofs: [1]
+        - type: "box"
+          x_min: -1
+          x_max: 2
+          y_min: -1
+          y_max: 2
+          z_min: -1
+          z_max: 0.001
+          dofs: [2]
+        - type: "box_zero_rotation"
+          x_min: -1
+          x_max: 0.001
+          y_min: -1
+          y_max: 2
+          z_min: -1
+          z_max: 2
+        - type: "box_zero_rotation"
+          x_min: -1
+          x_max: 2
+          y_min: -1
+          y_max: 0.001
+          z_min: -1
+          z_max: 2
+        - type: "box_zero_rotation"
+          x_min: -1
+          x_max: 2
+          y_min: -1
+          y_max: 2
+          z_min: -1
+          z_max: 0.001
+      forces:
+        - type: "manifold_pressure"
+          manifold_index: 0
+          pressure: 1.0
+      non_design_nodes:
+        - type: "box"
+          x_min: -1
+          x_max: 0.001
+          y_min: -1
+          y_max: 2
+          z_min: -1
+          z_max: 2
+          dofs: [0]
+        - type: "box"
+          x_min: -1
+          x_max: 2
+          y_min: -1
+          y_max: 0.001
+          z_min: -1
+          z_max: 2
+          dofs: [1]
+        - type: "box"
+          x_min: -1
+          x_max: 2
+          y_min: -1
+          y_max: 2
+          z_min: -1
+          z_max: 0.001
+          dofs: [0,1,2]

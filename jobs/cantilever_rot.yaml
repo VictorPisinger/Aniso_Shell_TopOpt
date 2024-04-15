@@ -1,0 +1,69 @@
+shell-opt:
+  job_type: "shape_and_thk"
+  output_file: "cantilever_shape_rf.e"
+  default_thickness: 0.01
+  max_its: 500  
+  thk_min: 1e-6
+  thk_max: 0.02
+  thk_move_limit: 0.001
+  filter_radius: 0.5
+  thickness_filter_radius: 0.005
+  move_min: -1.0
+  move_max: 1.0
+  volume_fraction: 1.0
+  move_move_limit: 0.01
+  aspect_ratio_constraint: 1.1
+  input_files: "../testMeshes/shell_cantilever_fine*.ply"
+  domain:
+    boundary_conditions:
+      - type: "box"
+        x_min: -1.0
+        x_max: 0.00001
+        y_min: -10.0
+        y_max: 10.0
+        z_min: -10.0
+        z_max: 10.0
+        dofs: [0,1,2]
+      - type: "box_zero_rotation"
+        x_min: -1.0
+        x_max: 0.00001
+        y_min: -10.0
+        y_max: 10.0
+        z_min: -10.0
+        z_max: 10.0
+    forces:
+      - type: "box_surface_rotation"
+        x_min: 1.9999
+        x_max: 3.0
+        y_min: -2
+        y_max: 2
+        z_min: -2
+        z_max: 2
+        magnitude: 1.0
+        center: [2.0,0.5,0.5]
+        normal: [1.0,0.0,0.0]
+      - type: "box_surface_traction"
+        x_min: 1.9999
+        x_max: 3.0
+        y_min: -2
+        y_max: 2
+        z_min: -2
+        z_max: 2
+        traction: [0.1,0,0]
+    non_design_nodes:
+      - type: "box"
+        x_min: -1.0
+        x_max: 0.00001
+        y_min: -10.0
+        y_max: 10.0
+        z_min: -10.0
+        z_max: 10.0
+        dofs: [0]
+      - type: "box"
+        x_min: 1.9999
+        x_max: 3.0
+        y_min: 0
+        y_max: 1
+        z_min: 0
+        z_max: 1
+        dofs: [0,1,2]

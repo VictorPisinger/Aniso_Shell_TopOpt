@@ -1,0 +1,118 @@
+shell-opt:
+    job_type: "shape_and_thk"
+    output_file: "pressure_plate_old.e"
+    default_thickness: 0.04
+    max_its: 300
+    thk_min: 0.01
+    thk_max: 0.1
+    thk_move_limit: 0.01
+    filter_radius: 0.4
+    volume_fraction: 1.0
+    move_min: -1.0
+    move_max: 1.0
+    move_move_limit: 0.01
+    aspect_ratio_constraint: 2.0
+    input_files: "../testMeshes/unordered_plate*.ply"
+    domain:
+      boundary_conditions:
+        - type: "box"
+          x_min: -1
+          x_max: -0.499
+          y_min: -1
+          y_max: 1
+          z_min: -1
+          z_max: 1
+          dofs: [0,1,2]
+        - type: "box"
+          x_min: -1
+          x_max: 1
+          y_min: -1
+          y_max: -0.499
+          z_min: -1
+          z_max: 1
+          dofs: [0,1,2]
+        - type: "box"
+          x_min: -1
+          x_max: 1
+          y_min: 0.499
+          y_max: 1
+          z_min: -1
+          z_max: 1
+          dofs: [0,1,2]
+        - type: "box"
+          x_min: 0.499
+          x_max: 1
+          y_min: -1
+          y_max: 1
+          z_min: -1
+          z_max: 1
+          dofs: [0,1,2]
+        - type: "box_zero_rotation"
+          x_min: -1
+          x_max: -0.499
+          y_min: -1
+          y_max: 1
+          z_min: -1
+          z_max: 1
+          dofs: [0,1,2]
+        - type: "box_zero_rotation"
+          x_min: -1
+          x_max: 1
+          y_min: -1
+          y_max: -0.499
+          z_min: -1
+          z_max: 1
+          dofs: [0,1,2]
+        - type: "box_zero_rotation"
+          x_min: -1
+          x_max: 1
+          y_min: 0.499
+          y_max: 1
+          z_min: -1
+          z_max: 1
+          dofs: [0,1,2]
+        - type: "box_zero_rotation"
+          x_min: 0.499
+          x_max: 1
+          y_min: -1
+          y_max: 1
+          z_min: -1
+          z_max: 1
+          dofs: [0,1,2]
+      forces:
+        - type: "manifold_pressure"
+          manifold_index: 0
+          pressure: 1.0
+      non_design_nodes:
+        - type: "box"
+          x_min: -1
+          x_max: -0.499
+          y_min: -1
+          y_max: 1
+          z_min: -1
+          z_max: 1
+          dofs: [0,1,2]
+        - type: "box"
+          x_min: -1
+          x_max: 1
+          y_min: -1
+          y_max: -0.499
+          z_min: -1
+          z_max: 1
+          dofs: [0,1,2]
+        - type: "box"
+          x_min: -1
+          x_max: 1
+          y_min: 0.499
+          y_max: 1
+          z_min: -1
+          z_max: 1
+          dofs: [0,1,2]
+        - type: "box"
+          x_min: 0.499
+          x_max: 1
+          y_min: -1
+          y_max: 1
+          z_min: -1
+          z_max: 1
+          dofs: [0,1,2]
