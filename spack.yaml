@@ -1,0 +1,37 @@
+# This is a Spack Environment file.
+#
+# It describes a set of packages to be installed, along with
+# configuration settings.
+spack:
+  # add package specs to the `specs` list
+  specs:
+  - autodiff
+  - benchmark
+  - catch2
+  - eigen
+  - exodusii~mpi ^hdf5~mpi
+  - ipopt
+  - nanoflann@1.2.3
+  - openblas
+  - suite-sparse +openmp
+  - yaml-cpp 
+  view: true
+  concretizer: 
+    unify: when_possible
+  packages:
+    all:
+      compiler: [gcc]
+      target: []
+  modules:
+    prefix_inspections:
+      bin:
+      - PATH
+      lib:
+      - LIBRARY_PATH
+      lib64:
+      - LIBRARY_PATH
+      include:
+      - C_INCLUDE_PATH
+      - CPLUS_INCLUDE_PATH
+      '':
+      - CMAKE_PREFIX_PATH
