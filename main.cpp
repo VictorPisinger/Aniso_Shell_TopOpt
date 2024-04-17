@@ -25,9 +25,18 @@ int main(int argc, char* argv[]) {
   mesh.read_ply_files(inputBase, defaultThickness);
   mesh.setup_dof_numbering();
 
+  const auto material           = opts.get_material_prop();
+  const auto layUp              = opts.get_layUp();
+  const auto elemAlignment      = opts.get_elemAlignment();
+
   const auto bcDof              = opts.get_boundary_dofs(mesh);
   const auto forces             = opts.get_forces(mesh);
   const auto manifold_pressures = opts.get_pressure_manifolds();
+
+  const std::string failureCriteria = opts.get<std::string>("failure_criteria","Tsai Wu");
+  std::cout << "failureCriteria = " << failureCriteria << std::endl;
+
+  
 
   const double youngs_module  = opts.get("youngs_module", 1.0);
   const double poissons_ratio = opts.get("poissons_ratio", 0.3);

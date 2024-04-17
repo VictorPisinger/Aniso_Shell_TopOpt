@@ -11,7 +11,7 @@ shell-opt:
   move_max: 1.0
   move_move_limit: 0.01
   aspect_ratio_constraint: 2.0
-  input_files: "../testMeshes/plate_simple*.ply"
+  input_files: "../testMeshes/plate_sim*.ply"
   domain:
     boundary_conditions:
       - type: "box"

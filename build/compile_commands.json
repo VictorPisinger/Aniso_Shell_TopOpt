@@ -1,0 +1,103 @@
+[
+{
+  "directory": "/home/victorpisinger/ShellTopOpt/Aniso_Shell_TopOpt/build",
+  "command": "/usr/bin/c++   -I../  -fsanitize=address -Wall -Wextra -Wno-deprecated-copy -fopenmp -g   -std=gnu++17 -o CMakeFiles/main.dir/main.cpp.o -c /home/victorpisinger/ShellTopOpt/Aniso_Shell_TopOpt/main.cpp",
+  "file": "/home/victorpisinger/ShellTopOpt/Aniso_Shell_TopOpt/main.cpp"
+},
+
+{
+  "directory": "/home/victorpisinger/ShellTopOpt/Aniso_Shell_TopOpt/build",
+  "command": "/usr/bin/c++   -I../  -fsanitize=address -Wall -Wextra -Wno-deprecated-copy -fopenmp -g   -std=gnu++17 -o CMakeFiles/elementIntegrator.dir/elementIntegrator.cpp.o -c /home/victorpisinger/ShellTopOpt/Aniso_Shell_TopOpt/elementIntegrator.cpp",
+  "file": "/home/victorpisinger/ShellTopOpt/Aniso_Shell_TopOpt/elementIntegrator.cpp"
+},
+
+{
+  "directory": "/home/victorpisinger/ShellTopOpt/Aniso_Shell_TopOpt/build",
+  "command": "/usr/bin/c++   -I../  -fsanitize=address -Wall -Wextra -Wno-deprecated-copy -fopenmp -g   -std=gnu++17 -o CMakeFiles/benchmark.dir/benchmark.cpp.o -c /home/victorpisinger/ShellTopOpt/Aniso_Shell_TopOpt/benchmark.cpp",
+  "file": "/home/victorpisinger/ShellTopOpt/Aniso_Shell_TopOpt/benchmark.cpp"
+},
+
+{
+  "directory": "/home/victorpisinger/ShellTopOpt/Aniso_Shell_TopOpt/build",
+  "command": "/usr/bin/c++   -I../  -fsanitize=address -Wall -Wextra -Wno-deprecated-copy -fopenmp -g   -std=gnu++17 -o CMakeFiles/mesh.dir/mesh.cpp.o -c /home/victorpisinger/ShellTopOpt/Aniso_Shell_TopOpt/mesh.cpp",
+  "file": "/home/victorpisinger/ShellTopOpt/Aniso_Shell_TopOpt/mesh.cpp"
+},
+
+{
+  "directory": "/home/victorpisinger/ShellTopOpt/Aniso_Shell_TopOpt/build",
+  "command": "/usr/bin/c++   -I../  -fsanitize=address -Wall -Wextra -Wno-deprecated-copy -fopenmp -g   -std=gnu++17 -o CMakeFiles/testOptimization.dir/testOptimization.cpp.o -c /home/victorpisinger/ShellTopOpt/Aniso_Shell_TopOpt/testOptimization.cpp",
+  "file": "/home/victorpisinger/ShellTopOpt/Aniso_Shell_TopOpt/testOptimization.cpp"
+},
+
+{
+  "directory": "/home/victorpisinger/ShellTopOpt/Aniso_Shell_TopOpt/build",
+  "command": "/usr/bin/c++   -I../  -fsanitize=address -Wall -Wextra -Wno-deprecated-copy -fopenmp -g   -std=gnu++17 -o CMakeFiles/MMAseq.dir/MMAseq.cpp.o -c /home/victorpisinger/ShellTopOpt/Aniso_Shell_TopOpt/MMAseq.cpp",
+  "file": "/home/victorpisinger/ShellTopOpt/Aniso_Shell_TopOpt/MMAseq.cpp"
+},
+
+{
+  "directory": "/home/victorpisinger/ShellTopOpt/Aniso_Shell_TopOpt/build",
+  "command": "/usr/bin/c++   -I../  -fsanitize=address -Wall -Wextra -Wno-deprecated-copy -fopenmp -g   -std=gnu++17 -o CMakeFiles/finiteElementAnalysis.dir/finiteElementAnalysis.cpp.o -c /home/victorpisinger/ShellTopOpt/Aniso_Shell_TopOpt/finiteElementAnalysis.cpp",
+  "file": "/home/victorpisinger/ShellTopOpt/Aniso_Shell_TopOpt/finiteElementAnalysis.cpp"
+},
+
+{
+  "directory": "/home/victorpisinger/ShellTopOpt/Aniso_Shell_TopOpt/build",
+  "command": "/usr/bin/c++   -I../  -fsanitize=address -Wall -Wextra -Wno-deprecated-copy -fopenmp -g   -std=gnu++17 -o CMakeFiles/options.dir/options.cpp.o -c /home/victorpisinger/ShellTopOpt/Aniso_Shell_TopOpt/options.cpp",
+  "file": "/home/victorpisinger/ShellTopOpt/Aniso_Shell_TopOpt/options.cpp"
+},
+
+{
+  "directory": "/home/victorpisinger/ShellTopOpt/Aniso_Shell_TopOpt/build",
+  "command": "/usr/bin/c++   -I../  -fsanitize=address -Wall -Wextra -Wno-deprecated-copy -fopenmp -g   -std=gnu++17 -o CMakeFiles/exodusWriter.dir/exodusWriter.cpp.o -c /home/victorpisinger/ShellTopOpt/Aniso_Shell_TopOpt/exodusWriter.cpp",
+  "file": "/home/victorpisinger/ShellTopOpt/Aniso_Shell_TopOpt/exodusWriter.cpp"
+},
+
+{
+  "directory": "/home/victorpisinger/ShellTopOpt/Aniso_Shell_TopOpt/build",
+  "command": "/usr/bin/c++   -I../  -fsanitize=address -Wall -Wextra -Wno-deprecated-copy -fopenmp -g   -std=gnu++17 -o CMakeFiles/manifold.dir/manifold.cpp.o -c /home/victorpisinger/ShellTopOpt/Aniso_Shell_TopOpt/manifold.cpp",
+  "file": "/home/victorpisinger/ShellTopOpt/Aniso_Shell_TopOpt/manifold.cpp"
+},
+
+{
+  "directory": "/home/victorpisinger/ShellTopOpt/Aniso_Shell_TopOpt/build",
+  "command": "/usr/bin/c++   -I../  -fsanitize=address -Wall -Wextra -Wno-deprecated-copy -fopenmp -g   -std=gnu++17 -o CMakeFiles/testFiniteDifference.dir/testFiniteDifference.cpp.o -c /home/victorpisinger/ShellTopOpt/Aniso_Shell_TopOpt/testFiniteDifference.cpp",
+  "file": "/home/victorpisinger/ShellTopOpt/Aniso_Shell_TopOpt/testFiniteDifference.cpp"
+},
+
+{
+  "directory": "/home/victorpisinger/ShellTopOpt/Aniso_Shell_TopOpt/build",
+  "command": "/usr/bin/c++   -I../  -fsanitize=address -Wall -Wextra -Wno-deprecated-copy -fopenmp -g   -std=gnu++17 -o CMakeFiles/volumeConstraint.dir/volumeConstraint.cpp.o -c /home/victorpisinger/ShellTopOpt/Aniso_Shell_TopOpt/volumeConstraint.cpp",
+  "file": "/home/victorpisinger/ShellTopOpt/Aniso_Shell_TopOpt/volumeConstraint.cpp"
+},
+
+{
+  "directory": "/home/victorpisinger/ShellTopOpt/Aniso_Shell_TopOpt/build",
+  "command": "/usr/bin/c++   -I../  -fsanitize=address -Wall -Wextra -Wno-deprecated-copy -fopenmp -g   -std=gnu++17 -o CMakeFiles/pdeFilter.dir/pdeFilter.cpp.o -c /home/victorpisinger/ShellTopOpt/Aniso_Shell_TopOpt/pdeFilter.cpp",
+  "file": "/home/victorpisinger/ShellTopOpt/Aniso_Shell_TopOpt/pdeFilter.cpp"
+},
+
+{
+  "directory": "/home/victorpisinger/ShellTopOpt/Aniso_Shell_TopOpt/build",
+  "command": "/usr/bin/c++   -I../  -fsanitize=address -Wall -Wextra -Wno-deprecated-copy -fopenmp -g   -std=gnu++17 -o CMakeFiles/thicknessFilter.dir/thicknessFilter.cpp.o -c /home/victorpisinger/ShellTopOpt/Aniso_Shell_TopOpt/thicknessFilter.cpp",
+  "file": "/home/victorpisinger/ShellTopOpt/Aniso_Shell_TopOpt/thicknessFilter.cpp"
+},
+
+{
+  "directory": "/home/victorpisinger/ShellTopOpt/Aniso_Shell_TopOpt/build",
+  "command": "/usr/bin/c++   -I../  -fsanitize=address -Wall -Wextra -Wno-deprecated-copy -fopenmp -g   -std=gnu++17 -o CMakeFiles/testFiniteElementAnalysis.dir/testFiniteElementAnalysis.cpp.o -c /home/victorpisinger/ShellTopOpt/Aniso_Shell_TopOpt/testFiniteElementAnalysis.cpp",
+  "file": "/home/victorpisinger/ShellTopOpt/Aniso_Shell_TopOpt/testFiniteElementAnalysis.cpp"
+},
+
+{
+  "directory": "/home/victorpisinger/ShellTopOpt/Aniso_Shell_TopOpt/build",
+  "command": "/usr/bin/c++   -I../  -fsanitize=address -Wall -Wextra -Wno-deprecated-copy -fopenmp -g   -std=gnu++17 -o CMakeFiles/qualityConstraint.dir/qualityConstraint.cpp.o -c /home/victorpisinger/ShellTopOpt/Aniso_Shell_TopOpt/qualityConstraint.cpp",
+  "file": "/home/victorpisinger/ShellTopOpt/Aniso_Shell_TopOpt/qualityConstraint.cpp"
+},
+
+{
+  "directory": "/home/victorpisinger/ShellTopOpt/Aniso_Shell_TopOpt/build",
+  "command": "/usr/bin/c++   -I../  -fsanitize=address -Wall -Wextra -Wno-deprecated-copy -fopenmp -g   -std=gnu++17 -o CMakeFiles/testElementIntegrator.dir/testElementIntegrator.cpp.o -c /home/victorpisinger/ShellTopOpt/Aniso_Shell_TopOpt/testElementIntegrator.cpp",
+  "file": "/home/victorpisinger/ShellTopOpt/Aniso_Shell_TopOpt/testElementIntegrator.cpp"
+}
+]

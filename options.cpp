@@ -4,15 +4,18 @@
 
 #include "shellElement.h"
 
+#include "eigen3/Eigen/Dense"
+
+#include <typeinfo>
+
 Options::Options(int argc, char* argv[]) {
 
   std::string configFile = "../jobs/cylinder.yaml";
-
+    
   char** start     = argv;
   char** end       = argv + argc;
   std::string flag = "-c";
   char** itr       = std::find(start, end, flag);
-
   if (itr != end && ++itr != end) {
     configFile = std::string(*itr);
   }
@@ -23,6 +26,50 @@ Options::Options(int argc, char* argv[]) {
   } catch (std::exception e) {
     // if file is bad, just dont load it.
   }
+}
+
+
+// Retrive material properties and store as matrix
+std::vector<std::array<double,10>> Options::get_material_prop() {
+  std::vector<std::array<double,10>> matProp;
+  std::array<double,10> material ;
+  int nMat = std::size(rootnode["shell-opt"]["Material"]);
+  for (int i = 0; i<nMat; i++){
+    std::cout << "Material = " << rootnode["shell-opt"]["Material"][i]["mat"] << std::endl;
+    material = rootnode["shell-opt"]["Material"][i]["mat"].as<std::array<double,10>>();
+    matProp.push_back(material);
+  }
+  return matProp;
+}
+
+// Retrive element alignment vector
+std::array<Eigen::Vector<double, 3>, 3>  Options::get_elemAlignment() {
+  std::array<Eigen::Vector<double, 3>, 3> localEvec;
+  for (int i=0;i<3;i++){
+  std::array<double,3> axis = rootnode["shell-opt"]["elemAlign"][i].as<std::array<double,3>>();
+  localEvec[i][0] = axis[0];
+  localEvec[i][1] = axis[1];
+  localEvec[i][2] = axis[2];
+  }
+  return localEvec;
+}
+
+
+// Retrive element layup
+std::vector<std::array<std::vector<double>, 3>>  Options::get_layUp() {
+  std::vector<std::array<std::vector<double>, 3>> layups;
+  std::array<std::vector<double>, 3> layer;
+  int nLayups = std::size(rootnode["shell-opt"]["Layup"]);
+  for (int i=0;i<nLayups;i++){
+    const std::vector<double> theta = rootnode["shell-opt"]["Layup"][i]["theta"].as<std::vector<double>>();
+    const std::vector<double> thk = rootnode["shell-opt"]["Layup"][i]["thk"].as<std::vector<double>>();
+    const std::vector<double> mat= rootnode["shell-opt"]["Layup"][i]["mat"].as<std::vector<double>>();
+    layer[0] = theta;
+    layer[1] = thk;
+    layer[2] = mat;
+    layups.push_back(layer);
+  }
+  return layups;
 }
 
 std::vector<uint32_t> Options::get_boundary_dofs(const Mesh& mesh) const {
@@ -39,7 +86,7 @@ std::vector<uint32_t> Options::get_boundary_dofs(const Mesh& mesh) const {
       const double z_max               = bc["z_max"].as<double>();
       const double z_min               = bc["z_min"].as<double>();
       const std::vector<uint32_t> dofs = bc["dofs"].as<std::vector<uint32_t>>();
-
+      
       auto isInBox = [&](const std::array<double, 3> pt) {
         const bool in_x = pt[0] <= x_max && pt[0] >= x_min;
         const bool in_y = pt[1] <= y_max && pt[1] >= y_min;
@@ -481,6 +528,7 @@ std::vector<std::pair<size_t, double>> Options::get_pressure_manifolds() const {
 
   return manifolds;
 }
+
 
 std::array<std::shared_ptr<std::vector<uint32_t>>, 3> Options::get_non_design_nodes(const Mesh& mesh) const {
 

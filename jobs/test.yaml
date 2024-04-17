@@ -1,0 +1,58 @@
+shell-opt:
+  job_type: "analysis"
+  output_file: "testMesh.e"
+  default_thickness: 0.5
+  max_its: 5
+  thk_min: 0.0001
+  thk_max: 1
+  thk_move_limit: 0.01
+  filter_radius: 5.0
+  move_min: -1.0
+  move_max: 1.0
+  move_move_limit: 0.01
+  aspect_ratio_constraint: 100
+  input_files: "../testMeshes/plate_sim*.ply"
+  failure_criteria: "von Mises"
+  Material:
+      - mat: [1e2,1e2,0.3,1e2,5000,5000,5000,5000,5000,1.8e-6]
+      - mat: [181e3,10.3e3,0.28,7.17e3,1100,600,20,140,70,1.8e-6]
+      - mat: [210e3,210e3,0.3,80e3,1000,600,20,140,70,7.85e-6]
+  elemAlign:
+        - [1,0,0]
+        - [0,1,0]
+        - [0,0,1]
+  Layup:	
+    - theta: [0, 0, 0]
+      thk: [1, 1, 1]
+      mat: [1, 1, 1]
+    - theta: [0, 0, 0]
+      thk: [1, 1, 1]
+      mat: [1, 1, 1]
+
+  domain:
+    boundary_conditions:
+      - type: "box"
+        x_min: -1
+        x_max: 1
+        y_min: -10
+        y_max: 10
+        z_min: -1
+        z_max: 1
+        dofs: [0,1,2]
+      - type: "box_zero_rotation"
+        x_min: -1
+        x_max: 1
+        y_min: -10
+        y_max: 10
+        z_min: -1
+        z_max: 1
+    forces:
+      - type: "box"
+        x_min: -59
+        x_max: 61
+        y_min: -10
+        y_max: 10
+        z_min: -1
+        z_max: 1
+        dofs: [2]
+        values: [-0.001]

@@ -23,7 +23,7 @@ namespace Shell {
  */
 template <typename T>
 std::array<Eigen::Vector<T, 3>, 3> compute_local_basis(const std::array<Eigen::Vector<T, 3>, 3>& globalCoords) {
-
+  
   std::array<Eigen::Vector<T, 3>, 3> e; // {e1,e2,e3}
 
   // e1 is the vector from node 0 to node 1

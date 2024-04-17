@@ -9,11 +9,20 @@
 
 #include "mesh.h"
 
+#include "eigen3/Eigen/Dense"
+
+
 class Options {
 
 public:
   Options(int argc, char* argv[]);
 
+  std::vector<std::array<double,10>> get_material_prop();
+  
+  std::array<Eigen::Vector<double, 3>, 3>  get_elemAlignment();
+  
+  std::vector<std::array<std::vector<double>, 3>> get_layUp();
+  
   std::vector<uint32_t> get_boundary_dofs(const Mesh& mesh) const;
 
   std::vector<std::pair<uint32_t, double>> get_forces(const Mesh& mesh) const;
